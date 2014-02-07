@@ -6,10 +6,13 @@
 #
 # Copyright (c) 2009+ Keolo Keagy
 # See LICENSE for details
+
+module SellDo
 module Mixpanel
   # URI related exceptions
   class Error < StandardError; end
   class HTTPError < Error; end
   class TimeoutError < Error; end
   class ParseError < Error; end
+end
 end

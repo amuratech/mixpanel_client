@@ -1,18 +1,18 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path('../lib', __FILE__)
-require 'mixpanel/version'
+require 'selldo/mixpanel/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'mixpanel_client'
-  s.version     = Mixpanel::Client::VERSION
+  s.name        = 'selldo_mixpanel_client'
+  s.version     = SellDo::Mixpanel::Client::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Keolo Keagy']
-  s.email       = ['keolo@dreampointmedia.com']
-  s.homepage    = 'http://github.com/keolo/mixpanel_client' 
+  s.authors     = ['Tanmay Patil']
+  s.email       = ['tanmay@amuratech.com']
+  s.homepage    = 'https://github.com/tanmayp/mixpanel_client' 
   s.summary     = %q{Ruby Mixpanel API Client Library}
   s.description = %q{Simple ruby client interface to the Mixpanel API.}
 
-  s.rubyforge_project = 'mixpanel_client'
+  s.rubyforge_project = 'selldo_mixpanel_client'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

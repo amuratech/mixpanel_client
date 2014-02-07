@@ -6,7 +6,8 @@
 #
 # Copyright (c) 2009+ Keolo Keagy
 # See LICENSE for details
-module Mixpanel
+module SellDo
+	module Mixpanel
   # Utility methods for Mixpanel::Client
   class Client
     module Utils
@@ -34,4 +35,5 @@ module Mixpanel
       end
     end
   end
+end
 end

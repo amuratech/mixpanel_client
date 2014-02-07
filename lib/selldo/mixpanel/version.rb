@@ -6,10 +6,12 @@
 #
 # Copyright (c) 2009+ Keolo Keagy
 # See LICENSE for details
+module SellDo
 module Mixpanel
   # Return metrics from Mixpanel Data API
   class Client
     # Mixpanel::Client library version
     VERSION = '3.1.2'
   end
+end
 end

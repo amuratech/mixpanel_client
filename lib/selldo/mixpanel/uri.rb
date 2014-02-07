@@ -6,6 +6,7 @@
 #
 # Copyright (c) 2009+ Keolo Keagy
 # See LICENSE for details
+module SellDo
 module Mixpanel
   # Utilities to assist generating and requesting URIs
   class URI
@@ -24,4 +25,5 @@ module Mixpanel
       raise HTTPError, JSON.parse(error.io.read)['error']
     end
   end
+end
 end

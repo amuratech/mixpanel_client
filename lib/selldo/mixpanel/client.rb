@@ -6,7 +6,8 @@
 #
 # Copyright (c) 2009+ Keolo Keagy
 # See LICENSE for details
-module Mixpanel
+module SellDo
+	module Mixpanel
   # Return metrics from Mixpanel Data API
   class Client
     BASE_URI = 'https://mixpanel.com/api/2.0'
@@ -123,5 +124,6 @@ module Mixpanel
     def self.base_uri_for_resource(resource)
       resource == 'export' ? DATA_URI : BASE_URI
     end
+  end
   end
 end

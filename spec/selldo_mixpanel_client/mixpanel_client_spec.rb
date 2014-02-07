@@ -1,22 +1,22 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe Mixpanel::Client do
+describe SellDo::Mixpanel::Client do
   before :all do
-    @client = Mixpanel::Client.new(:api_key => 'test_key', :api_secret => 'test_secret')
-    @uri = Regexp.escape(Mixpanel::Client::BASE_URI)
+    @client = SellDo::Mixpanel::Client.new(:api_key => 'test_key', :api_secret => 'test_secret')
+    @uri = Regexp.escape(SellDo::Mixpanel::Client::BASE_URI)
   end
 
   context 'when initializing a new Mixpanel::Client' do
     it 'should not raise an exception if a hash is given' do
-      Mixpanel::Client.new('api_key' => 'test_key', 'api_secret' => 'test_secret').should_not{raise_error}
+      SellDo::Mixpanel::Client.new('api_key' => 'test_key', 'api_secret' => 'test_secret').should_not{raise_error}
     end
 
     it 'should set a parallel option as false by default' do
-      Mixpanel::Client.new(:api_key => 'test_key', :api_secret => 'test_secret').parallel.should == false
+      SellDo::Mixpanel::Client.new(:api_key => 'test_key', :api_secret => 'test_secret').parallel.should == false
     end
 
     it 'should be able to set a parallel option when passed' do
-      Mixpanel::Client.new(:api_key => 'test_key', :api_secret => 'test_secret', :parallel => true).parallel.should == true
+      SellDo::Mixpanel::Client.new(:api_key => 'test_key', :api_secret => 'test_secret', :parallel => true).parallel.should == true
     end
   end
 
@@ -71,7 +71,7 @@ describe Mixpanel::Client do
 
     context "with parallel option enabled" do
       before :all do
-        @parallel_client = Mixpanel::Client.new(:api_key => 'test_key', :api_secret => 'test_secret', :parallel => true)
+        @parallel_client = SellDo::Mixpanel::Client.new(:api_key => 'test_key', :api_secret => 'test_secret', :parallel => true)
       end
 
       it "should return Typhoeus::Request" do
@@ -144,13 +144,13 @@ describe Mixpanel::Client do
     it 'should return a hashed string alpha sorted by key names.' do
       args              = {:c => 'see', :a => 'ey', :d => 'dee', :b => 'bee'}
       args_alpha_sorted = {:a => 'ey', :b => 'bee', :c => 'see', :d => 'dee'}
-      Mixpanel::Client::Utils.generate_signature(args, @client.api_secret).should == Mixpanel::Client::Utils.generate_signature(args_alpha_sorted, @client.api_secret)
+      SellDo::Mixpanel::Client::Utils.generate_signature(args, @client.api_secret).should == SellDo::Mixpanel::Client::Utils.generate_signature(args_alpha_sorted, @client.api_secret)
     end
   end
 
   describe '#to_hash' do
     it 'should return a ruby hash given json as a string' do
-      Mixpanel::Client::Utils.to_hash('{"a" : "ey", "b" : "bee"}', :json).should == {'a' => 'ey', 'b' => 'bee'}
+      SellDo::Mixpanel::Client::Utils.to_hash('{"a" : "ey", "b" : "bee"}', :json).should == {'a' => 'ey', 'b' => 'bee'}
     end
   end
 
